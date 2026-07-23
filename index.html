@@ -1,0 +1,420 @@
+<!-- Ficha Cadastral — Condomínio Residencial Munich -->
+<style>
+  #ficha-munich * { box-sizing: border-box; }
+  #ficha-munich {
+    --cream: #F6EFE4;
+    --cream-dark: #EBE1D0;
+    --bronze: #A9773F;
+    --bronze-dark: #7C5A30;
+    --espresso: #3B2A1F;
+    --espresso-soft: #5B4636;
+    --sage: #7C8A63;
+    --line: #D9CBB2;
+    --danger: #A6432F;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--espresso);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 48px;
+  }
+  #ficha-munich .head {
+    background: var(--espresso);
+    color: var(--cream);
+    padding: 28px 32px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  #ficha-munich .head::after {
+    content: "";
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 160px; height: 160px;
+    border: 2px solid rgba(246,239,228,0.18);
+    border-radius: 50%;
+  }
+  #ficha-munich .head .eyebrow {
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--bronze);
+    margin: 0 0 6px;
+  }
+  #ficha-munich .head h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  #ficha-munich .head p {
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    font-size: 13px;
+    color: var(--cream-dark);
+    margin: 8px 0 0;
+    max-width: 520px;
+    line-height: 1.5;
+  }
+  #ficha-munich .seal {
+    position: absolute; right: 26px; bottom: -18px;
+    width: 54px; height: 54px; border-radius: 50%;
+    background: var(--bronze);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--espresso); text-align: center; line-height: 1.1;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
+  #ficha-munich form { padding: 34px 32px 0; }
+  #ficha-munich .section {
+    margin-bottom: 30px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--line);
+  }
+  #ficha-munich .section:last-of-type { border-bottom: none; }
+  #ficha-munich .section-title {
+    display: flex; align-items: baseline; gap: 10px;
+    margin: 0 0 16px;
+  }
+  #ficha-munich .section-title .num {
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    font-size: 11px; color: var(--bronze-dark);
+    border: 1px solid var(--bronze); border-radius: 50%;
+    width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  #ficha-munich .section-title h2 {
+    font-size: 17px; font-weight: 400; margin: 0; color: var(--espresso-soft);
+  }
+  #ficha-munich .section-note {
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    font-size: 11.5px; color: var(--espresso-soft); opacity: 0.75;
+    margin: -10px 0 14px;
+  }
+  #ficha-munich .grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px;
+  }
+  #ficha-munich .grid.g3 { grid-template-columns: 1fr 1fr 1fr; }
+  #ficha-munich .grid.g4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  #ficha-munich .full { grid-column: 1 / -1; }
+  #ficha-munich label {
+    display: block;
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    font-size: 11.5px; letter-spacing: 0.03em; text-transform: uppercase;
+    color: var(--espresso-soft); margin-bottom: 5px;
+  }
+  #ficha-munich input[type=text],
+  #ficha-munich input[type=email],
+  #ficha-munich input[type=tel],
+  #ficha-munich input[type=date],
+  #ficha-munich input[type=number],
+  #ficha-munich select,
+  #ficha-munich textarea {
+    width: 100%;
+    font-family: Georgia, serif;
+    font-size: 14.5px;
+    padding: 9px 10px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--espresso);
+  }
+  #ficha-munich input:focus, #ficha-munich select:focus, #ficha-munich textarea:focus {
+    outline: 2px solid var(--sage); outline-offset: 1px; border-color: var(--sage);
+  }
+  #ficha-munich textarea { resize: vertical; min-height: 56px; }
+  #ficha-munich .subblock {
+    background: var(--cream-dark);
+    border-radius: 5px;
+    padding: 14px 14px 4px;
+    margin-bottom: 14px;
+  }
+  #ficha-munich .subblock-title {
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--bronze-dark); margin: -2px 0 10px;
+  }
+  #ficha-munich .mobility-row { display: flex; gap: 20px; flex-wrap: wrap; }
+  #ficha-munich .mobility-item {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--cream-dark); border-radius: 4px; padding: 10px 14px;
+  }
+  #ficha-munich .mobility-item label { margin: 0; text-transform: none; font-size: 14px; }
+  #ficha-munich .mobility-item input[type=number] { width: 70px; }
+  #ficha-munich .lgpd {
+    background: var(--cream-dark);
+    border-left: 3px solid var(--bronze);
+    padding: 12px 14px;
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    font-size: 12.5px; line-height: 1.6; color: var(--espresso-soft);
+    margin-bottom: 14px;
+  }
+  #ficha-munich .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; font-family: 'Trebuchet MS', system-ui, sans-serif; }
+  #ficha-munich .consent input { margin-top: 3px; }
+  #ficha-munich .submit-row { display: flex; justify-content: space-between; align-items: center; padding: 0 32px 30px; }
+  #ficha-munich .submit-btn {
+    font-family: 'Trebuchet MS', system-ui, sans-serif;
+    background: var(--espresso); color: var(--cream);
+    border: none; border-radius: 3px; padding: 13px 26px;
+    font-size: 14px; letter-spacing: 0.03em; cursor: pointer;
+  }
+  #ficha-munich .submit-btn:hover { background: var(--bronze-dark); }
+  #ficha-munich .status { font-family: 'Trebuchet MS', system-ui, sans-serif; font-size: 12.5px; color: var(--sage); }
+  #ficha-munich .toggle-admin {
+    text-align: center; padding: 14px 32px 30px;
+    font-family: 'Trebuchet MS', system-ui, sans-serif; font-size: 12px;
+  }
+  #ficha-munich .toggle-admin button {
+    background: none; border: none; color: var(--bronze-dark); text-decoration: underline; cursor: pointer; font-size: 12px;
+  }
+  #ficha-munich .admin-panel { padding: 0 32px 40px; }
+  #ficha-munich .admin-panel h3 { font-size: 15px; font-weight: 400; color: var(--espresso-soft); }
+  #ficha-munich .table-scroll { overflow-x: auto; }
+  #ficha-munich table { width: 100%; border-collapse: collapse; font-family: 'Trebuchet MS', system-ui, sans-serif; font-size: 12px; }
+  #ficha-munich th, #ficha-munich td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; white-space: nowrap; }
+  #ficha-munich th { color: var(--bronze-dark); font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; font-size: 10px; }
+  #ficha-munich .empty-note { font-family: 'Trebuchet MS', system-ui, sans-serif; font-size: 12.5px; color: var(--espresso-soft); font-style: italic; }
+</style>
+
+<div id="ficha-munich">
+  <div class="head">
+    <p class="eyebrow">Condomínio Residencial Munich</p>
+    <h1>Ficha de Atualização Cadastral</h1>
+    <p>Mantenha os dados da sua unidade sempre em dia — isso agiliza portaria, correspondências, seguros e qualquer contato em caso de emergência.</p>
+    <div class="seal">FICHA<br>2026</div>
+  </div>
+
+  <form id="munich-form">
+    <div class="section">
+      <div class="section-title"><span class="num">1</span><h2>Unidade</h2></div>
+      <div class="grid g3">
+        <div class="full"><label>Unidade *</label><input type="text" name="unidade" required></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">2</span><h2>Proprietário</h2></div>
+      <div class="grid g3">
+        <div><label>Nome completo</label><input type="text" name="prop_nome"></div>
+        <div><label>Telefone</label><input type="tel" name="prop_tel"></div>
+        <div><label>E-mail</label><input type="email" name="prop_email"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">3</span><h2>Morador responsável</h2></div>
+      <div class="grid g3">
+        <div><label>Nome completo *</label><input type="text" name="resp_nome" required></div>
+        <div><label>CPF</label><input type="text" name="resp_cpf"></div>
+        <div><label>Data de nascimento</label><input type="date" name="resp_nasc"></div>
+        <div><label>Telefone *</label><input type="tel" name="resp_tel" required></div>
+        <div><label>E-mail</label><input type="email" name="resp_email"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">4</span><h2>Demais moradores</h2></div>
+      <div class="grid g3" style="margin-bottom:14px;">
+        <div><label>Quantidade de moradores</label><input type="number" min="0" id="qtd_morador" name="qtd_morador" value="0"></div>
+      </div>
+      <div id="moradores-list"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">5</span><h2>Veículo</h2></div>
+      <div class="grid g4">
+        <div><label>Placa</label><input type="text" name="v_placa"></div>
+        <div><label>Marca</label><input type="text" name="v_marca"></div>
+        <div><label>Modelo</label><input type="text" name="v_modelo"></div>
+        <div><label>Cor</label><input type="text" name="v_cor"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">6</span><h2>Bicicleta / Patinete</h2></div>
+      <div class="mobility-row">
+        <div class="mobility-item"><label for="qtd_bicicleta">Bicicleta — quantidade</label><input type="number" min="0" id="qtd_bicicleta" name="qtd_bicicleta" value="0"></div>
+        <div class="mobility-item"><label for="qtd_patinete">Patinete — quantidade</label><input type="number" min="0" id="qtd_patinete" name="qtd_patinete" value="0"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">7</span><h2>Animal de estimação</h2></div>
+      <div class="grid g3" style="margin-bottom:14px;">
+        <div><label>Quantidade de animais</label><input type="number" min="0" id="qtd_pet" name="qtd_pet" value="0"></div>
+      </div>
+      <div id="pets-list"></div>
+    </div>
+
+    <div class="section">
+      <div class="lgpd">
+        Os dados desta ficha são usados exclusivamente pela administração do condomínio para fins de segurança, comunicação e cadastro junto à portaria, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018). Não são compartilhados com terceiros.
+      </div>
+      <label class="consent">
+        <input type="checkbox" name="consentimento" required>
+        <span>Declaro que as informações acima são verdadeiras e autorizo seu uso pela administração do condomínio para os fins descritos.</span>
+      </label>
+    </div>
+  </form>
+
+  <div class="submit-row">
+    <span class="status" id="status-msg"></span>
+    <button class="submit-btn" id="submit-btn">Enviar atualização</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ATENÇÃO: troque a linha abaixo pela URL do seu Web App do Google Apps Script
+  // (veja instruções de configuração enviadas junto com este arquivo)
+  const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwPXEsDEiuMurZO2ERm40ibvKRx0r-8LP-9mRxjlI-TxDSLkiaTbmxxk2T8fqp8BVejQw/exec';
+
+  const root = document.getElementById('ficha-munich');
+  const statusMsg = root.querySelector('#status-msg');
+  const moradoresList = root.querySelector('#moradores-list');
+  const qtdMoradorInput = root.querySelector('#qtd_morador');
+
+  function moradorBlockHTML(i, data) {
+    data = data || {};
+    return `
+      <div class="subblock" data-morador-index="${i}">
+        <div class="subblock-title">Morador ${String(i).padStart(2,'0')}</div>
+        <div class="grid g3">
+          <div><label>Nome</label><input type="text" class="mo-nome" value="${data.nome||''}"></div>
+          <div><label>Data de nascimento</label><input type="date" class="mo-nasc" value="${data.nasc||''}"></div>
+          <div><label>Telefone</label><input type="tel" class="mo-tel" value="${data.tel||''}"></div>
+        </div>
+      </div>`;
+  }
+
+  function collectCurrentMoradores() {
+    return Array.from(moradoresList.children).map(b => ({
+      nome: b.querySelector('.mo-nome').value,
+      nasc: b.querySelector('.mo-nasc').value,
+      tel: b.querySelector('.mo-tel').value
+    }));
+  }
+
+  function rebuildMoradorBlocks(qty) {
+    qty = Math.max(0, Math.min(20, parseInt(qty, 10) || 0));
+    const existing = collectCurrentMoradores();
+    let html = '';
+    for (let i = 1; i <= qty; i++) {
+      html += moradorBlockHTML(i, existing[i-1]);
+    }
+    moradoresList.innerHTML = html;
+  }
+
+  qtdMoradorInput.addEventListener('input', () => rebuildMoradorBlocks(qtdMoradorInput.value));
+  rebuildMoradorBlocks(0);
+  const qtdPetInput = root.querySelector('#qtd_pet');
+  const petsList = root.querySelector('#pets-list');
+
+  function petBlockHTML(i, data) {
+    data = data || {};
+    return `
+      <div class="subblock" data-pet-index="${i}">
+        <div class="subblock-title">Animal ${String(i).padStart(2,'0')}</div>
+        <div class="grid g3">
+          <div><label>Nome</label><input type="text" class="p-nome" value="${data.nome||''}"></div>
+          <div><label>Sexo</label>
+            <select class="p-sexo">
+              <option value="" ${!data.sexo?'selected':''}>—</option>
+              <option ${data.sexo==='Macho'?'selected':''}>Macho</option>
+              <option ${data.sexo==='Fêmea'?'selected':''}>Fêmea</option>
+            </select>
+          </div>
+          <div><label>Espécie</label><input type="text" class="p-especie" value="${data.especie||''}" placeholder="Ex: Cão, gato"></div>
+          <div><label>Porte</label>
+            <select class="p-porte">
+              <option value="" ${!data.porte?'selected':''}>—</option>
+              <option ${data.porte==='Pequeno'?'selected':''}>Pequeno</option>
+              <option ${data.porte==='Médio'?'selected':''}>Médio</option>
+              <option ${data.porte==='Grande'?'selected':''}>Grande</option>
+            </select>
+          </div>
+          <div><label>Raça</label><input type="text" class="p-raca" value="${data.raca||''}"></div>
+          <div><label>Cor</label><input type="text" class="p-cor" value="${data.cor||''}"></div>
+          <div><label>Data de nascimento</label><input type="date" class="p-nasc" value="${data.nasc||''}"></div>
+        </div>
+      </div>`;
+  }
+
+  function collectCurrentPets() {
+    return Array.from(petsList.children).map(b => ({
+      nome: b.querySelector('.p-nome').value,
+      sexo: b.querySelector('.p-sexo').value,
+      especie: b.querySelector('.p-especie').value,
+      porte: b.querySelector('.p-porte').value,
+      raca: b.querySelector('.p-raca').value,
+      cor: b.querySelector('.p-cor').value,
+      nasc: b.querySelector('.p-nasc').value
+    }));
+  }
+
+  function rebuildPetBlocks(qty) {
+    qty = Math.max(0, Math.min(20, parseInt(qty, 10) || 0));
+    const existing = collectCurrentPets();
+    let html = '';
+    for (let i = 1; i <= qty; i++) {
+      html += petBlockHTML(i, existing[i-1]);
+    }
+    petsList.innerHTML = html;
+  }
+
+  qtdPetInput.addEventListener('input', () => rebuildPetBlocks(qtdPetInput.value));
+  rebuildPetBlocks(0);
+
+  function fieldsOf(fd, names) {
+    const out = {};
+    names.forEach(n => out[n] = fd.get(n) || '');
+    return out;
+  }
+
+  root.querySelector('#submit-btn').addEventListener('click', async () => {
+    const form = root.querySelector('#munich-form');
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const fd = new FormData(form);
+
+    const entry = {
+      unidade: fd.get('unidade') || '',
+      ...fieldsOf(fd, ['prop_nome','prop_tel','prop_email']),
+      ...fieldsOf(fd, ['resp_nome','resp_cpf','resp_nasc','resp_tel','resp_email']),
+      qtd_morador: qtdMoradorInput.value || '0',
+      moradores: collectCurrentMoradores().filter(m => m.nome),
+      veiculo: fieldsOf(fd, ['v_placa','v_marca','v_modelo','v_cor']),
+      qtd_bicicleta: fd.get('qtd_bicicleta') || '0',
+      qtd_patinete: fd.get('qtd_patinete') || '0',
+      qtd_pet: qtdPetInput.value || '0',
+      pets: collectCurrentPets().filter(p => p.nome || p.especie),
+      enviado_em: new Date().toLocaleString('pt-BR')
+    };
+
+    if (!entry.unidade) { statusMsg.textContent = 'Informe a unidade.'; return; }
+
+    if (SHEET_WEBAPP_URL.indexOf('COLE_AQUI') !== -1) {
+      statusMsg.textContent = 'Configuração pendente: cole a URL do Web App no código antes de publicar.';
+      return;
+    }
+
+    statusMsg.textContent = 'Enviando...';
+    try {
+      await fetch(SHEET_WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(entry)
+      });
+      // modo 'no-cors' não permite ler a resposta, então assumimos sucesso
+      // se o fetch não lançou erro de rede
+      statusMsg.textContent = 'Cadastro enviado com sucesso. Obrigado!';
+      form.reset();
+      rebuildMoradorBlocks(0);
+      rebuildPetBlocks(0);
+    } catch (e) {
+      statusMsg.textContent = 'Erro ao enviar: verifique sua conexão e tente novamente.';
+    }
+  });
+
+})();
+</script>
