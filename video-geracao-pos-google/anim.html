@@ -1,0 +1,199 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--navy:#081428;--blue:#2f7bff;--cyan:#6fd0ff;--ice:#cfe9ff;--glow:0 0 24px rgba(111,208,255,.75)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--navy);font-family:Inter,sans-serif;color:#fff}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden}
+#bg{position:absolute;inset:-60px;background:url(bg.jpg) center/cover;filter:saturate(1.15) brightness(.9)}
+#vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(8,20,40,.15) 0%,rgba(8,20,40,.75) 75%,rgba(4,10,22,.95) 100%)}
+.p{position:absolute;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.scene{position:absolute;top:110px;left:0;right:0;bottom:-110px;opacity:0}
+.c{position:absolute;left:0;right:0;text-align:center}
+.disp{font-family:"Inter Display",Inter,sans-serif;font-weight:900;letter-spacing:-2px;line-height:.95}
+.tag{display:inline-flex;gap:0;font-weight:800;font-size:34px;letter-spacing:3px;border:2px solid rgba(111,208,255,.6);border-radius:40px;overflow:hidden}
+.tag span{padding:12px 26px}.tag span:first-child{background:var(--blue)}
+.glowtxt{text-shadow:0 0 30px rgba(47,123,255,.9),0 0 60px rgba(111,208,255,.4)}
+.sub{font-size:46px;font-weight:500;color:var(--ice);line-height:1.3;padding:0 90px}
+.label{display:inline-block;font-weight:900;letter-spacing:10px;font-size:44px;padding:10px 26px 10px 36px;background:rgba(47,123,255,.25);border:2px solid var(--cyan);border-radius:12px}
+.big{font-size:230px}
+.card{position:absolute;left:90px;right:90px;padding:40px 44px;border-radius:32px;background:linear-gradient(135deg,rgba(47,123,255,.28),rgba(8,20,40,.6));border:2px solid rgba(111,208,255,.55);box-shadow:0 0 40px rgba(47,123,255,.35);display:flex;align-items:center;gap:36px}
+.num{flex:none;width:120px;height:120px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:72px;font-weight:900;box-shadow:var(--glow)}
+.card h3{font-size:50px;font-weight:800;line-height:1.1}
+.card p{font-size:34px;color:var(--ice);margin-top:8px;line-height:1.25}
+#cap{position:absolute;left:90px;right:90px;bottom:230px;text-align:center;font-size:44px;font-weight:700;line-height:1.3}
+#cap span{background:rgba(4,12,28,.78);padding:6px 18px;border-radius:12px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+#bar{position:absolute;left:0;top:0;height:8px;background:linear-gradient(90deg,var(--blue),var(--cyan));box-shadow:var(--glow)}
+#brand{position:absolute;top:70px;left:0;right:0;text-align:center;font-size:28px;letter-spacing:6px;color:var(--ice);opacity:.8;font-weight:700}
+.person{display:inline-block;width:62px;height:120px;margin:0 6px;position:relative}
+.person:before{content:"";position:absolute;left:14px;top:0;width:34px;height:34px;border-radius:50%;background:currentColor}
+.person:after{content:"";position:absolute;left:4px;top:42px;width:54px;height:76px;border-radius:26px 26px 8px 8px;background:currentColor}
+</style></head><body>
+<div id="stage">
+  <div id="bg"></div><div id="vignette"></div><div id="parts"></div>
+  <div id="bar"></div>
+  <div id="brand">A GERAÇÃO PÓS-GOOGLE</div>
+
+  <!-- 1 -->
+  <div class="scene" id="s1">
+    <div class="c" id="s1tag" style="top:560px"><div class="tag"><span>GERAL</span><span>INTERNET</span></div></div>
+    <div class="c disp glowtxt" id="s1t1" style="top:680px;font-size:150px">A GERAÇÃO</div>
+    <div class="c disp glowtxt" id="s1t2" style="top:830px;font-size:150px;color:var(--cyan)">PÓS-GOOGLE</div>
+    <div class="c sub" id="s1sub" style="top:1040px">Jovens que já nascem<br>na era da <b style="color:#fff">inteligência artificial</b></div>
+  </div>
+
+  <!-- 2 -->
+  <div class="scene" id="s2">
+    <div class="c disp glowtxt" id="s2y" style="top:400px;font-size:260px">1751</div>
+    <div class="c sub" id="s2a" style="top:680px">📖 A <i>Enciclopédia</i> quis<br><b style="color:#fff">democratizar o saber</b></div>
+    <div class="c" id="s2arrow" style="top:870px;font-size:90px;color:var(--cyan)">↓</div>
+    <div class="c" id="s2b" style="top:1000px">
+      <div style="display:inline-block;padding:34px 50px;border-radius:40px 40px 40px 8px;background:var(--blue);box-shadow:var(--glow);font-size:52px;font-weight:800">“IA, me dê a resposta.”</div>
+      <div class="sub" style="margin-top:34px">Hoje, basta pedir.</div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="scene" id="s3">
+    <div class="c" id="s3l" style="top:330px"><span class="label">🇧🇷 BRASIL</span></div>
+    <svg id="g3" style="position:absolute;left:240px;top:450px" width="600" height="340" viewBox="0 0 600 340">
+      <path d="M40 300 A260 260 0 0 1 560 300" fill="none" stroke="rgba(207,233,255,.18)" stroke-width="44" stroke-linecap="round"/>
+      <path class="arc" d="M40 300 A260 260 0 0 1 560 300" fill="none" stroke="url(#gr)" stroke-width="44" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
+      <defs><linearGradient id="gr"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#6fd0ff"/></linearGradient></defs>
+    </svg>
+    <div class="c disp glowtxt" id="s3n" style="top:610px;font-size:170px">0%</div>
+    <div class="c sub" id="s3s" style="top:820px">da <b style="color:#fff">Geração Z</b> usa IA generativa com frequência</div>
+    <div class="c" id="s3p" style="top:1020px"></div>
+    <div class="c sub" id="s3s2" style="top:1170px"><b style="color:var(--cyan);font-size:64px">7 em cada 10</b><br>alunos do ensino médio pesquisam com IA</div>
+  </div>
+
+  <!-- 4 -->
+  <div class="scene" id="s4">
+    <div class="c" id="s4l" style="top:330px"><span class="label">🇺🇸 EUA</span></div>
+    <svg id="g4" style="position:absolute;left:240px;top:450px" width="600" height="340" viewBox="0 0 600 340">
+      <path d="M40 300 A260 260 0 0 1 560 300" fill="none" stroke="rgba(207,233,255,.18)" stroke-width="44" stroke-linecap="round"/>
+      <path class="arc" d="M40 300 A260 260 0 0 1 560 300" fill="none" stroke="url(#gr)" stroke-width="44" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
+    </svg>
+    <div class="c disp glowtxt" id="s4n" style="top:610px;font-size:170px">0%</div>
+    <div class="c sub" id="s4s" style="top:820px">dos jovens de <b style="color:#fff">18 a 28 anos</b> já usam IA no lugar do buscador</div>
+    <div class="c" id="s4search" style="top:1060px">
+      <div id="s4box" style="display:inline-flex;align-items:center;gap:20px;width:760px;padding:30px 40px;border-radius:60px;background:rgba(255,255,255,.12);border:2px solid rgba(207,233,255,.5);font-size:42px;color:var(--ice);text-align:left">
+        <span id="s4ico">🔍</span><span id="s4txt">Pesquisar...</span></div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="scene" id="s5">
+    <div class="c" id="s5l" style="top:330px"><span class="label">🇨🇳 CHINA</span></div>
+    <div class="c" id="s5a" style="top:470px">
+      <div class="disp glowtxt" style="font-size:190px;color:var(--cyan)" id="s5an">+0%</div>
+      <div class="sub">nos acertos com a IA</div>
+    </div>
+    <div class="c" id="s5mid" style="top:800px;font-size:40px;letter-spacing:8px;color:var(--ice);font-weight:700">⏳ SEIS MESES DEPOIS, SEM A IA</div>
+    <div class="c" id="s5b" style="top:880px">
+      <div class="disp" style="font-size:190px;color:#ff7a8a;text-shadow:0 0 40px rgba(255,90,110,.7)" id="s5bn">−0%</div>
+      <div class="sub">na aprovação</div>
+    </div>
+    <div class="c" id="s5d" style="top:1200px"><span class="label" style="border-color:#ff7a8a;background:rgba(255,90,110,.18);letter-spacing:6px">DÍVIDA COGNITIVA</span></div>
+  </div>
+
+  <!-- 6 -->
+  <div class="scene" id="s6">
+    <div class="c disp glowtxt" id="s6t" style="top:560px;font-size:130px">ILUSÃO DE<br><span style="color:var(--cyan)">FLUÊNCIA</span></div>
+    <div class="c" id="s6eq" style="top:900px;font-size:80px;font-weight:900">
+      <span style="color:var(--ice)">clareza</span> <span style="color:#ff7a8a">≠</span> <span>domínio</span></div>
+  </div>
+
+  <!-- 7 -->
+  <div class="scene" id="s7">
+    <div class="c disp glowtxt" id="s7t" style="top:290px;font-size:96px">NAVEGAR<br>É PRECISO</div>
+    <div class="c sub" id="s7s" style="top:520px">3 regras para os pais</div>
+    <div class="card" id="r1" style="top:640px"><div class="num">1</div><div><h3>Use a IA com seu filho</h3><p>Mostre que ela erra e inventa</p></div></div>
+    <div class="card" id="r2" style="top:880px"><div class="num">2</div><div><h3>Valorize o processo</h3><p>“Explique com suas palavras”</p></div></div>
+    <div class="card" id="r3" style="top:1120px"><div class="num">3</div><div><h3>Combinem regras</h3><p>Quando usar e o que nunca compartilhar</p></div></div>
+  </div>
+
+  <!-- 8 -->
+  <div class="scene" id="s8">
+    <div class="c disp glowtxt" id="s8a" style="top:520px;font-size:120px">PERGUNTAR<br>MELHOR.</div>
+    <div class="c disp glowtxt" id="s8b" style="top:800px;font-size:120px;color:var(--cyan)">PENSAR<br>SEMPRE.</div>
+    <div class="c" id="s8src" style="top:1130px;font-size:30px;color:var(--ice);line-height:1.5;padding:0 120px">Baseado na reportagem “A geração pós-Google”,<br>de Alessandro Giannini</div>
+  </div>
+
+  <div id="cap"></div>
+</div>
+<script>
+const TIM = __TIMING__;
+const TOTAL = 59;
+const CAPS = [
+ "Chegou a geração pós-Google, que já nasce na era da inteligência artificial.",
+ "Em 1751, a Enciclopédia quis democratizar o saber. Hoje, basta pedir as respostas à IA.",
+ "No Brasil, 70% da geração Z usa IA com frequência. Sete em cada dez alunos do ensino médio já pesquisam com ela.",
+ "Nos Estados Unidos, 65% dos jovens trocaram o buscador pelo chatbot.",
+ "Na China, a IA elevou os acertos em 18%. Mas, seis meses depois, sem ela, a aprovação caiu 20%.",
+ "É a ilusão de fluência: confundir clareza com domínio do assunto.",
+ "Para os pais, três regras: use a IA com seu filho, valorize o processo e combinem limites.",
+ "O desafio? Perguntar melhor às máquinas, sem deixar de pensar."];
+const $ = id => document.getElementById(id);
+const clamp = (x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const eo = x => 1-Math.pow(1-clamp(x),3);
+const eb = x => {x=clamp(x);const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+// pop-in: fade + rise
+function pop(id,t,t0,d=.6,dy=60){const e=$(id);const k=eo((t-t0)/d);e.style.opacity=k;e.style.transform=`translateY(${(1-k)*dy}px)`;}
+function zoom(id,t,t0,d=.6){const e=$(id);const k=(t-t0)/d;e.style.opacity=clamp(k*1.5);e.style.transform=`scale(${.6+.4*eb(k)})`;}
+
+// particles
+const parts=[];for(let i=0;i<40;i++){const p=document.createElement('div');p.className='p';const s=2+((i*37)%7);
+ p.style.width=p.style.height=s+'px';$('parts').appendChild(p);parts.push({e:p,x:(i*197)%1080,y:(i*331)%1920,v:12+(i*13)%30,ph:i});}
+// people grid for scene 3
+for(let i=0;i<10;i++){const p=document.createElement('span');p.className='person';p.id='pp'+i;$('s3p').appendChild(p);}
+
+function sceneAlpha(i,t){const s=TIM.start[i]-.25, e=(i<7?TIM.start[i+1]:TOTAL+1)-.25;
+ return clamp((t-s)/.35)*clamp((e-t)/.35);}
+
+function captions(t){let html='';for(let i=0;i<8;i++){const s=TIM.start[i],d=TIM.dur[i];if(t>=s-.1&&t<s+d+.25){
+  const words=CAPS[i].split(' ');const chunks=[];let cur=[];
+  for(const w of words){cur.push(w);if(cur.join(' ').length>34||/[.,:?]$/.test(w)&&cur.join(' ').length>14){chunks.push(cur.join(' '));cur=[];}}
+  if(cur.length)chunks.push(cur.join(' '));
+  const tot=chunks.reduce((a,c)=>a+c.length,0);let acc=0;const r=(t-s)/d*tot;
+  for(const c of chunks){if(r<acc+c.length||c===chunks[chunks.length-1]){html='<span>'+c+'</span>';break;}acc+=c.length;}
+ }}$('cap').innerHTML=html;}
+
+function render(t){
+ $('bg').style.transform=`scale(${1.05+t*.0025}) translate(${Math.sin(t*.15)*14}px,${Math.cos(t*.12)*18}px)`;
+ for(const p of parts){const y=((p.y-t*p.v)%1920+1920)%1920;p.e.style.transform=`translate(${p.x+Math.sin(t*.6+p.ph)*20}px,${y}px)`;p.e.style.opacity=.25+.35*Math.sin(t*1.3+p.ph)**2;}
+ $('bar').style.width=(t/TOTAL*1080)+'px';
+ $('brand').style.opacity=t>TIM.start[1]-.3&&t<TIM.start[7]-.3?.8:0;
+ for(let i=0;i<8;i++){const a=sceneAlpha(i,t);const e=$('s'+(i+1));e.style.opacity=a;e.style.display=a>0?'block':'none';}
+ const S=TIM.start;
+ // 1
+ let l=t-S[0]; pop('s1tag',l,0); zoom('s1t1',l,.3,.7); zoom('s1t2',l,.6,.7); pop('s1sub',l,2.6,.8);
+ // 2
+ l=t-S[1]; zoom('s2y',l,0,.7); $('s2y').textContent=Math.round(1000+751*eo(l/1.2)); pop('s2a',l,1.0); pop('s2arrow',l,4.0,.5,-30); pop('s2b',l,4.4,.7);
+ // 3
+ l=t-S[2]; pop('s3l',l,0); const v3=Math.round(70*eo((l-.3)/2)); $('s3n').textContent=v3+'%';
+ document.querySelector('#g3 .arc').setAttribute('stroke-dasharray',`${v3} 100`); pop('s3n',l,.2); pop('s3s',l,1.4);
+ pop('s3p',l,4.6); for(let i=0;i<10;i++){$('pp'+i).style.color=(i<7&&l>4.9+i*.18)?'#6fd0ff':'rgba(207,233,255,.22)';$('pp'+i).style.filter=(i<7&&l>4.9+i*.18)?'drop-shadow(0 0 10px #6fd0ff)':'none';}
+ pop('s3s2',l,5.0);
+ // 4
+ l=t-S[3]; pop('s4l',l,0); const v4=Math.round(65*eo((l-.3)/2)); $('s4n').textContent=v4+'%';
+ document.querySelector('#g4 .arc').setAttribute('stroke-dasharray',`${v4} 100`); pop('s4n',l,.2); pop('s4s',l,1.2); pop('s4search',l,2.6);
+ const sw=l>4.6; $('s4ico').textContent=sw?'💬':'🔍'; $('s4txt').textContent=sw?'Pergunte à IA...':'Pesquisar...';
+ $('s4box').style.background=sw?'#2f7bff':'rgba(255,255,255,.12)'; $('s4box').style.color=sw?'#fff':'#cfe9ff';
+ $('s4box').style.transform=`scale(${1+.08*Math.max(0,1-Math.abs(l-4.7)/.3)})`;
+ // 5
+ l=t-S[4]; pop('s5l',l,0); pop('s5a',l,.3); $('s5an').textContent='+'+Math.round(18*eo((l-.4)/1.4))+'%';
+ pop('s5mid',l,3.4); pop('s5b',l,4.6); $('s5bn').textContent='−'+Math.round(20*eo((l-4.7)/1.4))+'%'; zoom('s5d',l,7.2,.6);
+ // 6
+ l=t-S[5]; zoom('s6t',l,0,.8); pop('s6eq',l,1.8);
+ $('s6t').style.filter=`blur(${Math.max(0,Math.sin(l*2.2))*2}px)`;
+ // 7
+ l=t-S[6]; pop('s7t',l,0); pop('s7s',l,.4); const d7=TIM.dur[6];
+ pop('r1',l,d7*.28,.5,0); pop('r2',l,d7*.55,.5,0); pop('r3',l,d7*.72,.5,0);
+ for(const [id,k] of [['r1',.28],['r2',.55],['r3',.72]]){const x=1-eo((l-d7*k)/.5);$(id).style.transform=`translateX(${x*-700}px)`;}
+ // 8
+ l=t-S[7]; zoom('s8a',l,1.0,.7); zoom('s8b',l,2.6,.7); pop('s8src',l,3.6);
+ captions(t);
+}
+window.render=render; render(0);
+</script></body></html>
